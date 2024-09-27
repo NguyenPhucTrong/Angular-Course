@@ -1,0 +1,9 @@
+<img src={{products.pImage}} alt="Logo">
+<h1>{{title}}</h1>
+<h1>{{products.message}}</h1>
+<h1>{{"$"+ products.price}}</h1>
+<h1>Total: ${{getDiscount().toFixed(1)}}</h1>
+<h2>{{ products.inStock > 0 ? 'Only ' + products.inStock + ' Item left' :'Not in Stock' }}</h2>
+<input [value]="name" (input)="onChangeName($event)" />
+<p>name= {{name}}</p>
+<button [disabled]="!(products.inStock>0)">Buy now</button>
