@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'top-header',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './top-header.component.html',
   styleUrl: './top-header.component.css'
 })
@@ -18,12 +19,14 @@ export class TopHeaderComponent {
     pImage: "/assets/flower1.png"
   }
 
+
   getDiscount() {
     return this.products.price - (this.products.price * this.products.discount / 100)
   }
 
   onChangeName(event: any) {
     this.name = event.target.value;
+    console.log(this.name);
     // console.log(event.target.value);
   }
 }
