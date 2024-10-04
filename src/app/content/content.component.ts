@@ -9,6 +9,10 @@ import { Component } from '@angular/core';
   styleUrl: './content.component.css'
 })
 export class ContentComponent {
-  menu: string[] = ["menu", " contact", " about"];
+  productTest = [
+    { id: 1, name: "Test 1", price: 10 },
+    { id: 2, name: "Test 2", price: 20 },
+    { id: 3, name: "Test 3", price: 30 }
+  ];
 
 }

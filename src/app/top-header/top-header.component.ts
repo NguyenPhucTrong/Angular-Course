@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { SetBackground } from "./../CustomAttribute/setBackground.directive";
+import { Component, ElementRef, ViewChild, viewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'top-header',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, SetBackground],
   templateUrl: './top-header.component.html',
   styleUrl: './top-header.component.css'
 })
@@ -24,9 +25,16 @@ export class TopHeaderComponent {
     return this.products.price - (this.products.price * this.products.discount / 100)
   }
 
-  onChangeName(event: any) {
-    this.name = event.target.value;
-    console.log(this.name);
-    // console.log(event.target.value);
+  // onChangeName(inputEl: HTMLInputElement) {
+
+  //   console.log(inputEl);
+  //   // console.log(event.target.value);
+  // }
+
+  @ViewChild('inputEL') inputElements: ElementRef;
+
+  show() {
+    console.log(this.inputElements);
+
   }
 }
