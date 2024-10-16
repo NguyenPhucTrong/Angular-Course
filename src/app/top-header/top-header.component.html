@@ -1,14 +1,16 @@
-<img src={{products.pImage}} alt="Logo">
-<h1>{{title}}</h1>
-<h1>{{products.message}}</h1>
-<h1>{{"$"+ products.price}}</h1>
-<h1 setBackground>Total: ${{getDiscount().toFixed(1)}}</h1>
-<h2>{{ products.inStock > 0 ? 'Only ' + products.inStock + ' Item left' :'Not in Stock' }}</h2>
-<!-- <input [(ngModel)]="name" (input)="onChangeName($event)" />
-  -->
+<div class="flex flex-col items-center gap-3">
+  <img src={{products.pImage}} alt="Logo">
+  <h1>{{title}}</h1>
+  <h1>{{products.message}}</h1>
+  <h1 class="text-3xl font-bold underline">{{"$"+ products.price}}</h1>
+  <h1 setBackground>Total: ${{getDiscount().toFixed(1)}}</h1>
+  <h2>{{ products.inStock > 0 ? 'Only ' + products.inStock + ' Item left' :'Not in Stock' }}</h2>
+  <!-- <input [(ngModel)]="name" (input)="onChangeName($event)" />
+    -->
 
-<input #inputEL />
-<button (click)="show()">Buy now</button>
+  <input #inputEL class="border border-black rounded-md " />
+  <button (click)="show()" appAppHover>Buy now</button>
+</div>
 
 <!-- <p>name: {{name}}</p> -->
 <!-- <button [disabled]="!(products.inStock>0)">Buy now</button> -->

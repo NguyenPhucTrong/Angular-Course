@@ -1,11 +1,12 @@
 import { SetBackground } from "./../CustomAttribute/setBackground.directive";
-import { Component, ElementRef, ViewChild, viewChild } from '@angular/core';
+import { Component, ElementRef, Host, ViewChild, viewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { AppHoverDirective } from "../CustomAttribute/app-hover.directive";
 
 @Component({
   selector: 'top-header',
   standalone: true,
-  imports: [FormsModule, SetBackground],
+  imports: [FormsModule, SetBackground, AppHoverDirective],
   templateUrl: './top-header.component.html',
   styleUrl: './top-header.component.css'
 })
@@ -18,6 +19,7 @@ export class TopHeaderComponent {
     discount: 12,
     inStock: 2,
     pImage: "/assets/flower1.png"
+
   }
 
 
@@ -35,6 +37,9 @@ export class TopHeaderComponent {
 
   show() {
     console.log(this.inputElements);
+    alert("Hello")
 
   }
+
+
 }
